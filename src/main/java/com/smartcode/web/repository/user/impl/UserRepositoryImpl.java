@@ -21,7 +21,7 @@ public class UserRepositoryImpl implements UserRepository {
                     """
                             CREATE TABLE IF NOT EXISTS users (
                                 id serial primary key ,
-                                name varchar(255) not null ,
+                                title varchar(255) not null ,
                                 last_name varchar(255) not null ,
                                 middle_name varchar(255) ,
                                 age integer not null ,
@@ -40,7 +40,7 @@ public class UserRepositoryImpl implements UserRepository {
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = connection.prepareStatement(
-                    "INSERT INTO users (name, last_name, middle_name, age, username, password,balance) values(?,?,?,?,?,?,?)");
+                    "INSERT INTO users (name, last_name, middle_name, age, username, password) values(?,?,?,?,?,?,)");
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getLastName());
             preparedStatement.setString(3, user.getMiddleName());
