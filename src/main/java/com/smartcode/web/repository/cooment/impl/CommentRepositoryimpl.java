@@ -30,6 +30,8 @@ public class CommentRepositoryimpl implements CommentRepository {
         }
     }
 
+
+
     @Override
     public void create(Comment comment) {
         PreparedStatement preparedStatement = null;
